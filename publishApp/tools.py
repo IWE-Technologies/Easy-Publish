@@ -79,7 +79,9 @@ class Tool:
     # ======================================================================================================
     @staticmethod
     def sensitive_words_filter(text): 
-        f = open('static/sensitive words/1.txt', 'r')
+        path = os.path.join(app.root_path, 'static/sensitive words/1.txt')
+        f = open(path, 'r')
+        #f = open('static/sensitive words/1.txt', 'r')
         result = ''
         flag = True
         for line in f:
