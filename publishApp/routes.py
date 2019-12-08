@@ -339,10 +339,11 @@ def get_article(articleID):
         db.session.add(article)
 
     comments = article.comments
+    subject = Subject.query.filter_by(id = article.subject_id).first()
     #comments = Comment.query.order_by(Comment.time.desc())
 
 
-    return render_template('article.html', article=article, comments=comments, Tool=Tool)
+    return render_template('article.html', article=article, comments=comments, Tool=Tool, subject=subject)
 
 
 # ========================================================================
